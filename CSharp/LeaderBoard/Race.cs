@@ -22,12 +22,12 @@ namespace TDDMicroExercises.LeaderBoard
         // This is the first time points are "awarded" completely hidden and implicitly
         public int GetPoints(Driver driver)
         {
-            return Points[Position(driver)];
+            return Points[PositionOf(driver)];
         }
 
-        private int Position(Driver driver)
+        private int PositionOf(Driver driver)
         {
-            return Drivers.IndexOf(driver); //Drivers.FindIndex(d => Equals(d, driver));
+            return Drivers.IndexOf(driver);
         }
     }
 }
