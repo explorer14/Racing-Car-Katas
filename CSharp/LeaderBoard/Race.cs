@@ -22,17 +22,13 @@ namespace TDDMicroExercises.LeaderBoard
         {
             var driverPosition = PositionOf(driver);
 
-            switch(driverPosition)
+            return driverPosition switch
             {
-                case 0:
-                    return 25;
-                case 1:
-                    return 18;
-                case 2:
-                    return 15;
-                default:
-                    return 0;
-            }
+                0 => 25,
+                1 => 18,
+                2 => 15,
+                _ => 0,
+            };
         }
 
         private int PositionOf(Driver driver)
