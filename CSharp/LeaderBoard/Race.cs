@@ -36,7 +36,6 @@ namespace TDDMicroExercises.LeaderBoard
             }
         }
 
-        //OBS: Property name doesn't match what's being returned.
         public List<Driver> Drivers { get; }
 
         public Dictionary<Driver, string> DriverNames
