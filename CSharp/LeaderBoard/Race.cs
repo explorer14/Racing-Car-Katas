@@ -5,8 +5,6 @@ namespace TDDMicroExercises.LeaderBoard
     //OBS: Is this a completed race or in progress race or something else?
     public class Race
     {
-        // OBS: why are points hardcoded?
-        private static readonly int[] Points = {25, 18, 15};
         private readonly string _name;
 
         public Race(string name, params Driver[] drivers)
@@ -22,7 +20,19 @@ namespace TDDMicroExercises.LeaderBoard
         // This is the first time points are "awarded" completely hidden and implicitly
         public int GetPoints(Driver driver)
         {
-            return Points[PositionOf(driver)];
+            var driverPosition = PositionOf(driver);
+
+            switch(driverPosition)
+            {
+                case 0:
+                    return 25;
+                case 1:
+                    return 18;
+                case 2:
+                    return 15;
+                default:
+                    return 0;
+            }
         }
 
         private int PositionOf(Driver driver)
