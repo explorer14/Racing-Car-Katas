@@ -55,13 +55,6 @@ namespace TDDMicroExercises.LeaderBoard
             return Points[Position(driver)];
         }
 
-        //OBS: why does Race expose an API to return driver name when the Driver object
-        // already exposes the Name property?
-        public string GetDriverName(Driver driver)
-        {
-            return DriverNames[driver];
-        }
-
         public override string ToString()
         {
             return _name;
