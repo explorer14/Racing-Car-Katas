@@ -27,7 +27,7 @@ namespace TDDMicroExercises.LeaderBoard
 
         private int Position(Driver driver)
         {
-            return Drivers.FindIndex(d => Equals(d, driver));
+            return Drivers.IndexOf(driver); //Drivers.FindIndex(d => Equals(d, driver));
         }
     }
 }
