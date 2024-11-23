@@ -4,12 +4,10 @@ namespace TDDMicroExercises.LeaderBoard
 {
     public class Leaderboard
     {
-        private readonly List<Race> _races = new List<Race>();
+        private readonly List<Race> _races = new();
 
-        public Leaderboard(params Race[] races)
-        {
+        public Leaderboard(params Race[] races) => 
             _races.AddRange(races);
-        }
 
         public Dictionary<string, int> DriverResults()
         {
@@ -18,15 +16,15 @@ namespace TDDMicroExercises.LeaderBoard
             {
                 foreach (var driver in race.Results)
                 {
-                    var driverName = race.GetDriverName(driver);
+                    var driverName = driver.Name;
                     var points = race.GetPoints(driver);
                     if (results.ContainsKey(driverName))
                     {
-                        results[driverName] = results[driverName] + points;
+                        results[driverName] += points;
                     }
                     else
                     {
-                        results.Add(driverName, 0 + points);
+                        results.Add(driverName, points);
                     }
                 }
             }
