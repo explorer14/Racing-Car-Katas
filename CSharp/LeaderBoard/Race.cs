@@ -38,11 +38,6 @@ namespace TDDMicroExercises.LeaderBoard
 
         public List<Driver> Drivers { get; }
 
-        public Dictionary<Driver, string> DriverNames
-        {
-            get {  return _driverNames; }
-        }
-
         public int Position(Driver driver)
         {
             return Drivers.FindIndex(d => Equals(d, driver));
