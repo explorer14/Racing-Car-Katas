@@ -9,7 +9,7 @@ namespace TDDMicroExercises.LeaderBoard
         public Leaderboard(params Race[] races) => 
             _races.AddRange(races);
 
-        public Dictionary<string, int> DriverResults()
+        public IReadOnlyDictionary<string, int> DriverResults()
         {
             var results = new Dictionary<string, int>();
             foreach (var race in _races)
