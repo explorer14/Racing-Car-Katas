@@ -17,13 +17,10 @@ namespace TDDMicroExercises.LeaderBoard
                 foreach (var driver in race.Results)
                 {
                     var points = race.GetPoints(driver);
-                    if (results.ContainsKey(driver.Name))
+
+                    if(!results.TryAdd(driver.Name, points))
                     {
                         results[driver.Name] += points;
-                    }
-                    else
-                    {
-                        results.Add(driver.Name, points);
                     }
                 }
             }
