@@ -7,8 +7,6 @@ namespace TDDMicroExercises.LeaderBoard
     {
         // OBS: why are points hardcoded?
         private static readonly int[] Points = {25, 18, 15};
-        // OBS: why need a dictionary to maintain a Drive -> driverName mapping when you already have a List<Driver>?
-        private readonly Dictionary<Driver, string> _driverNames = new Dictionary<Driver, string>();
         private readonly string _name;
 
         public Race(string name, params Driver[] drivers)
@@ -16,24 +14,6 @@ namespace TDDMicroExercises.LeaderBoard
             _name = name;
             Drivers = new List<Driver>();
             Drivers.AddRange(drivers);
-
-            foreach (var driver in Drivers)
-            {
-                var driverName = driver.Name;
-
-                //OBS: this is breaking LSP. If you have to typecast to get derivative specific information
-                // you've lost at polymorphism. Why can a self-driving car not use name and country instead?
-                var drivingCar = driver as SelfDrivingCar;
-
-                if (drivingCar != null)
-                {
-                    // OBS: this can be encapsulated within the SelfDrivingCar type otherwise it leaks driver knowledge
-                    // into Race.
-                    driverName = "Self Driving Car - " + drivingCar.Country + " (" +
-                                 drivingCar.AlgorithmVersion + ")";
-                }
-                _driverNames.Add(driver, driverName);
-            }
         }
 
         public List<Driver> Drivers { get; }
