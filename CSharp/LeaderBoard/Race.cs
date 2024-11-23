@@ -49,10 +49,5 @@ namespace TDDMicroExercises.LeaderBoard
         {
             return Points[Position(driver)];
         }
-
-        public override string ToString()
-        {
-            return _name;
-        }
     }
 }
