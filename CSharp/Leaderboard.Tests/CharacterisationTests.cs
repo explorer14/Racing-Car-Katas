@@ -12,13 +12,13 @@ public class CharacterisationTests(ITestOutputHelper testOutputHelper)
     {
         var leaderBoardWithOneRaceAndOneDriver = new Leaderboard(
             new Race(name: "GP2024",
-                new Driver(name: "b",
-                    country: "DE"),
-                new Driver(name: "a",
-                    country: "NL")),
+                new Driver(Name: "b",
+                    Country: "DE"),
+                new Driver(Name: "a",
+                    Country: "NL")),
             new Race(name: "GP2023",
-                new Driver(name: "b",
-                    country: "DE")));
+                new Driver(Name: "b",
+                    Country: "DE")));
 
         var driverResults = leaderBoardWithOneRaceAndOneDriver.DriverResults();
 
