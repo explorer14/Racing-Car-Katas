@@ -38,16 +38,17 @@ namespace TDDMicroExercises.LeaderBoard
 
         public List<Driver> Drivers { get; }
 
-        public int Position(Driver driver)
-        {
-            return Drivers.FindIndex(d => Equals(d, driver));
-        }
 
         //OBS: Points depend on the position of the driver in the Results collection.
         // This is the first time points are "awarded" completely hidden and implicitly
         public int GetPoints(Driver driver)
         {
             return Points[Position(driver)];
+        }
+
+        private int Position(Driver driver)
+        {
+            return Drivers.FindIndex(d => Equals(d, driver));
         }
     }
 }
