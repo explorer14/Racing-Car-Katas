@@ -14,10 +14,10 @@ namespace TDDMicroExercises.LeaderBoard
         public Race(string name, params Driver[] drivers)
         {
             _name = name;
-            Results = new List<Driver>();
-            Results.AddRange(drivers);
+            Drivers = new List<Driver>();
+            Drivers.AddRange(drivers);
 
-            foreach (var driver in Results)
+            foreach (var driver in Drivers)
             {
                 var driverName = driver.Name;
 
@@ -37,7 +37,7 @@ namespace TDDMicroExercises.LeaderBoard
         }
 
         //OBS: Property name doesn't match what's being returned.
-        public List<Driver> Results { get; }
+        public List<Driver> Drivers { get; }
 
         public Dictionary<Driver, string> DriverNames
         {
@@ -46,7 +46,7 @@ namespace TDDMicroExercises.LeaderBoard
 
         public int Position(Driver driver)
         {
-            return Results.FindIndex(d => Equals(d, driver));
+            return Drivers.FindIndex(d => Equals(d, driver));
         }
 
         //OBS: Points depend on the position of the driver in the Results collection.

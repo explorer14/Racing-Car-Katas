@@ -14,7 +14,7 @@ namespace TDDMicroExercises.LeaderBoard
             var results = new Dictionary<string, int>();
             foreach (var race in _races)
             {
-                foreach (var driver in race.Results)
+                foreach (var driver in race.Drivers)
                 {
                     var points = race.GetPoints(driver);
 
