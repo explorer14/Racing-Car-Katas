@@ -12,11 +12,10 @@ namespace TDDMicroExercises.LeaderBoard
         public Race(string name, params Driver[] drivers)
         {
             _name = name;
-            Drivers = new List<Driver>();
             Drivers.AddRange(drivers);
         }
 
-        public List<Driver> Drivers { get; }
+        public List<Driver> Drivers { get; } = new();
 
 
         //OBS: Points depend on the position of the driver in the Results collection.

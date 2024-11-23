@@ -15,7 +15,10 @@ public class CharacterisationTests(ITestOutputHelper testOutputHelper)
                 new Driver(name: "b",
                     country: "DE"),
                 new Driver(name: "a",
-                    country: "NL")));
+                    country: "NL")),
+            new Race(name: "GP2023",
+                new Driver(name: "b",
+                    country: "DE")));
 
         var driverResults = leaderBoardWithOneRaceAndOneDriver.DriverResults();
 
@@ -28,7 +31,7 @@ public class CharacterisationTests(ITestOutputHelper testOutputHelper)
             first => 
             {
                 first.Key.Should().Be("b");
-                first.Value.Should().Be(25);
+                first.Value.Should().Be(50);
             },
             second => 
             {
