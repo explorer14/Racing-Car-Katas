@@ -18,22 +18,13 @@ namespace TDDMicroExercises.LeaderBoard
 
         //OBS: Points depend on the position of the driver in the Results collection.
         // This is the first time points are "awarded" completely hidden and implicitly
-        public int GetPoints(Driver driver)
-        {
-            var driverPosition = PositionOf(driver);
-
-            return driverPosition switch
+        public int GetPoints(Driver driver) => 
+            Drivers.IndexOf(driver) switch
             {
                 0 => 25,
                 1 => 18,
                 2 => 15,
                 _ => 0,
             };
-        }
-
-        private int PositionOf(Driver driver)
-        {
-            return Drivers.IndexOf(driver);
-        }
     }
 }
